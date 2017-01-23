@@ -190,7 +190,7 @@ class UnisenderApi
         $context = stream_context_create($contextOptions);
 
         do {
-            $host = $this->getApiHost($retryCount);
+            $host = $this->getApiHost();
             $result = file_get_contents($host.$url, false, $context);
             ++$retryCount;
         } while ($result === false && $retryCount < $this->retryCount);
@@ -199,16 +199,10 @@ class UnisenderApi
     }
 
     /**
-     * @param int $retryCount
-     *
      * @return string
      */
-    protected function getApiHost($retryCount = 0)
+    protected function getApiHost()
     {
-        if ($retryCount % 2 === 0) {
-            return 'https://api.unisender.com/ru/api/';
-        } else {
-            return 'https://www.api.unisender.com/ru/api/';
-        }
+        return 'https://api.unisender.com/ru/api/';
     }
 }
