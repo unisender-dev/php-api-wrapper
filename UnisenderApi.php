@@ -7,9 +7,8 @@ namespace Unisender\ApiWrapper;
  *
  * @link http://www.unisender.com/ru/help/api/
  *
- * @version 1.3.3
  */
-class unisenderApi
+class UnisenderApi
 {
     /**
      * @var string
