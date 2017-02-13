@@ -11,4 +11,3 @@ The preferred way to install this extension is through [composer](http://getcomp
 ```
 composer require unisender/api-wrapper
 ```
-or add to `composer.json`
