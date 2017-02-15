@@ -5,8 +5,51 @@ namespace Unisender\ApiWrapper;
 /**
  * API UniSender.
  *
- * @link http://www.unisender.com/ru/help/api/
+ * @link https://www.unisender.com/en/support/integration/api/
+ * @link https://www.unisender.com/ru/support/integration/api/
  *
+ * @method sendSms
+ * @method sendEmail
+ * @method getLists
+ * @method createList
+ * @method updateList
+ * @method deleteList
+ * @method exclude
+ * @method unsubscribe
+ * @method importContacts
+ * @method exportContacts
+ * @method getTotalContactsCount
+ * @method getContactCount
+ * @method createEmailMessage
+ * @method createSmsMessage
+ * @method createCampaign
+ * @method getActualMessageVersion
+ * @method checkSms
+ * @method sendTestEmail
+ * @method checkEmail
+ * @method updateOptInEmail
+ * @method getWebVersion
+ * @method deleteMessage
+ * @method createEmailTemplate
+ * @method updateEmailTemplate
+ * @method deleteTemplate
+ * @method getTemplate
+ * @method getTemplates
+ * @method listTemplates
+ * @method getCampaignDeliveryStats
+ * @method getCampaignAggregateStats
+ * @method getVisitedLinks
+ * @method getCampaigns
+ * @method getCampaignStatus
+ * @method getMessages
+ * @method getMessage
+ * @method listMessages
+ * @method getFields
+ * @method createField
+ * @method updateField
+ * @method deleteField
+ * @method getTags
+ * @method deleteTag
  */
 class UnisenderApi
 {
@@ -36,17 +79,39 @@ class UnisenderApi
     protected $compression = false;
 
     /**
+     *
+     * @var string
+     */
+    protected $platform = '';
+
+    /**
      * UniSender Api constructor
      *
-     * @param string $apiKey
-     * @param string $encoding
+     * For example:
+     *
+     * <pre>
+     *
+     * $platform = 'My E-commerce product v1.0';
+     *
+     * $UnisenderApi = new UnisenderApi('api key here', 'UTF-8', 4, null, false, $platform);
+     * $UnisenderApi->sendSms(
+     *      ['phone' => 380971112233, 'sender' => 'SenderName', 'text' => 'Hello World!']
+     * );
+     *
+     * </pre>
+     *
+     * @param string $apiKey        Provide your api key here.
+     * @param string $encoding      If your current encoding is different from UTF-8, specify it here.
      * @param int    $retryCount
      * @param int    $timeout
      * @param bool   $compression
+     * @param string $platform      Specify your product name, example - My E-commerce v1.0.
+     *
      */
-    public function __construct($apiKey, $encoding = 'UTF-8', $retryCount = 4, $timeout = null, $compression = false)
+    public function __construct($apiKey, $encoding = 'UTF-8', $retryCount = 4, $timeout = null, $compression = false, $platform = null)
     {
         $this->apiKey = $apiKey;
+        $platform = trim((string) $platform);
 
         if (!empty($encoding)) {
             $this->encoding = $encoding;
@@ -62,6 +127,10 @@ class UnisenderApi
 
         if ($compression) {
             $this->compression = $compression;
+        }
+
+        if ($platform !== '') {
+            $this->platform = $platform;
         }
     }
 
@@ -156,6 +225,10 @@ class UnisenderApi
      */
     protected function callMethod($methodName, $params = [])
     {
+        if ($this->platform !== '') {
+            $params['platform'] = $this->platform;
+        }
+
         if (strtoupper($this->encoding) !== 'UTF-8') {
             if (function_exists('iconv')) {
                 array_walk_recursive($params, [$this, 'iconv']);
