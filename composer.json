@@ -13,6 +13,9 @@
     "require": {
         "php":                          ">=5.4.0"
     },
+    "suggest": {
+        "ext-bz2": "Allows bzip2 compression"
+    },
     "autoload": {
         "psr-4": {
             "Unisender\\ApiWrapper\\": ""
