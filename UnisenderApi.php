@@ -264,7 +264,7 @@ class UnisenderApi
 
         do {
             $host = $this->getApiHost();
-            $result = file_get_contents($host.$url, false, $context);
+            $result = @file_get_contents($host.$url, false, $context);
             ++$retryCount;
         } while ($result === false && $retryCount < $this->retryCount);
 
