@@ -221,7 +221,7 @@ class UnisenderApi
      * @param string $methodName
      * @param array  $params
      *
-     * @return array
+     * @return string|bool
      */
     protected function callMethod($methodName, $params = [])
     {
