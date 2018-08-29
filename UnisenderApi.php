@@ -253,6 +253,9 @@ class UnisenderApi
                 'header' => 'Content-type: application/x-www-form-urlencoded',
                 'content' => $content,
             ],
+            'ssl' => [
+                'crypto_method' => STREAM_CRYPTO_METHOD_TLSv1_2_CLIENT,
+            ]
         ];
 
         if ($this->timeout) {
@@ -276,6 +279,6 @@ class UnisenderApi
      */
     protected function getApiHost()
     {
-        return 'https://api.unisender.com/ru/api/';
+        return 'https://api.unisender.com/en/api/';
     }
 }

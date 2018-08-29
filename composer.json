@@ -11,7 +11,8 @@
         }
     ],
     "require": {
-        "php":                          ">=5.4.0"
+        "php": ">=5.6.0",
+        "ext-openssl": "Required for TLS 1.2 encryption"
     },
     "suggest": {
         "ext-bz2": "Allows bzip2 compression"
