@@ -312,7 +312,7 @@ class UnisenderApi
      */
     public function getContact(array $params)
     {
-        return $this->callMethod('getCheckedEmail', $params);
+        return $this->callMethod('getContact', $params);
     }
 
     /**
