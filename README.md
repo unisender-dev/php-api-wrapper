@@ -20,7 +20,7 @@ v1.2    Since this version, you may specify platform - a new argument. We will t
 v1.5    Since this version, we requrire at least PHP 5.6 to enable TLS 1.2 support. Now English is default locale for api request. 
 v1.6    Updated all information into english, added new api-methods.
 
-#Basic usage example
+# Basic usage example
 
 ```
 <?php
