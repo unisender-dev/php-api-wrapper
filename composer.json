@@ -15,8 +15,7 @@
         "ext-openssl": "*",
         "ext-iconv": "*",
         "ext-mbstring": "*",
-        "ext-json": "*",
-        "ext-bz2": "*"
+        "ext-json": "*"
     },
     "suggest": {
         "ext-bz2": "Allows bzip2 compression"
