@@ -74,6 +74,11 @@ class UnisenderApi
     /**
      * @var string
      */
+    protected $apiHost = 'https://api.unisender.com/en/api/';
+
+    /**
+     * @var string
+     */
     protected $encoding = 'UTF-8';
 
     /**
@@ -426,8 +431,16 @@ class UnisenderApi
     /**
      * @return string
      */
-    protected function getApiHost()
+    public function getApiHost()
     {
-        return 'https://api.unisender.com/en/api/';
+        return $this->apiHost;
+    }
+
+    /**
+     * @param string $apiHost
+     */
+    public function setApiHost($apiHost)
+    {
+        $this->apiHost = $apiHost;
     }
 }
