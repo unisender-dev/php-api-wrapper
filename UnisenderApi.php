@@ -63,6 +63,8 @@ namespace Unisender\ApiWrapper;
  * @method deleteField(array $params) It is a method to delete a user field.
  * @method getTags() It is a method to get list of all tags.
  * @method deleteTag(array $params) It is a method to delete a user tag.
+ * @method isContactInLists(array $params) Checks whether contact is in list.
+ * @method getContactFieldValues(array $params) Get addinitioan fields values for a contact.
  */
 class UnisenderApi
 {
@@ -92,10 +94,21 @@ class UnisenderApi
     protected $compression = false;
 
     /**
-     *
+     * Not required argument. Its like UserAgent from browsers. For example, put here: My E-commerce v1.0.
      * @var string
      */
     protected $platform = '';
+
+    /**
+     * @var string
+     */
+    protected $lang = 'en';
+
+    /**
+     * Allowed languages for api request.
+     * @var array
+     */
+    protected static $languages = ['en', 'ru', 'ua'];
 
     /**
      * UniSender Api constructor
@@ -162,6 +175,24 @@ class UnisenderApi
         }
 
         return $this->callMethod($name, $params);
+    }
+
+    /**
+     * Set desired language for api request.
+     *
+     * @param string $language
+     *
+     * @return $this|bool
+     */
+    public function setApiHostLanguage($language = '')
+    {
+        if (in_array($language, static::$languages, true))
+        {
+            $this->lang = $language;
+            return $this;
+        }
+
+        return false;
     }
 
     /**
@@ -428,6 +459,6 @@ class UnisenderApi
      */
     protected function getApiHost()
     {
-        return 'https://api.unisender.com/en/api/';
+        return sprintf('https://api.unisender.com/%s/api/', $this->lang);
     }
 }
