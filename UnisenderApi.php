@@ -5,8 +5,8 @@ namespace Unisender\ApiWrapper;
 /**
  * API UniSender.
  *
- * @link https://www.unisender.com/en/support/integration/api/
- * @link https://www.unisender.com/ru/support/integration/api/
+ * @link https://www.unisender.com/en/support/category/api/
+ * @link https://www.unisender.com/ru/support/category/api/
  *
  * @method sendSms(array $params) It is a method for easy sending the one SMS to one or several recipients.
  * @method sendEmail(array $params) It is a method to send a single individual email without personalization and
@@ -219,7 +219,7 @@ class UnisenderApi
      *
      * You can also request task status.
      *
-     * @see https://www.unisender.com/en/support/api/partners/exportcontacts/
+     * @see https://www.unisender.com/en/support/api/contacts/exportcontacts/
      *
      * @param array $params
      *
@@ -238,7 +238,7 @@ class UnisenderApi
      *
      * You can also request task status.
      *
-     * @see https://www.unisender.com/en/support/statistics/getcampaigndeliverystats/
+     * @see https://www.unisender.com/en/support/api/statistics/getcampaigndeliverystats/
      *
      * @param array $params
      *
@@ -279,7 +279,7 @@ class UnisenderApi
      *
      * @param array $params
      *
-     * @see https://www.unisender.com/en/support/api/partners/validatesender/
+     * @see https://www.unisender.com/en/support/api/messages/validatesender/
      *
      * @return false|string
      */
@@ -292,7 +292,7 @@ class UnisenderApi
      * The system will register the domain in the list for authentication and generate a dkim key for it.
      * Confirm the address on the domain to add the domain to the list.
      *
-     * @see https://www.unisender.com/en/support/api/partners/setsenderdomain/
+     * @see https://www.unisender.com/en/support/api/messages/setsenderdomain/
      *
      * @param array $params
      *
@@ -306,7 +306,7 @@ class UnisenderApi
     /**
      * Get domains list registrated by setSenderDomain api method.
      *
-     * @see https://www.unisender.com/en/support/api/partners/setsenderdomain/
+     * @see https://www.unisender.com/en/support/api/messages/getsenderdomainlist/
      *
      * @param array $params
      *
@@ -323,7 +323,7 @@ class UnisenderApi
      * but the confirmation link wasn’t clicked.
      * To verify the return address, you can use the validateSender method.
      *
-     * @see https://www.unisender.com/en/support/api/partners/getcheckedemail/
+     * @see https://www.unisender.com/en/support/api/messages/getcheckedemail/
      *
      * @param array $params
      *
