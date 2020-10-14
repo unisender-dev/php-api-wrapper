@@ -8,63 +8,63 @@ namespace Unisender\ApiWrapper;
  * @link https://www.unisender.com/en/support/category/api/
  * @link https://www.unisender.com/ru/support/category/api/
  *
- * @method sendSms(array $params) It is a method for easy sending the one SMS to one or several recipients.
- * @method sendEmail(array $params) It is a method to send a single individual email without personalization and
+ * @method string sendSms(array $params) It is a method for easy sending the one SMS to one or several recipients.
+ * @method string sendEmail(array $params) It is a method to send a single individual email without personalization and
  * with limited possibilities to obtain statistics. To send transactional letters, use the
  * UniOne — the transactional letter service from UniSender. https://www.unisender.com/en/features/unione/
- * @method getLists() It is a method to get the list of all available campaign lists.
- * @method createList(array $params) It is a method to create a new contact list.
- * @method updateList(array $params) It is a method to change campaign list properties.
- * @method deleteList(array $params) It is a method to delete a list.
- * @method exclude(array $params) The method excludes the contact’s email or phone number from one or several lists.
- * @method unsubscribe(array $params) The method unsubscribes the contact email or phone number from one or several
+ * @method string getLists() It is a method to get the list of all available campaign lists.
+ * @method string createList(array $params) It is a method to create a new contact list.
+ * @method string updateList(array $params) It is a method to change campaign list properties.
+ * @method string deleteList(array $params) It is a method to delete a list.
+ * @method string exclude(array $params) The method excludes the contact’s email or phone number from one or several lists.
+ * @method string unsubscribe(array $params) The method unsubscribes the contact email or phone number from one or several
  * lists.
- * @method importContacts(array $params) It is a method of bulk import of contacts.
- * @method getTotalContactsCount(array $params) The method returns the contacts database size by the user login.
- * @method getContactCount(array $params) Get contact count in list.
- * @method createEmailMessage(array $params) It is a method to create an email without sending it.
- * @method createSmsMessage(array $params) It is a method to create SMS messages without sending them.
- * @method createCampaign(array $params) This method is used to schedule or immediately start sending email
+ * @method string importContacts(array $params) It is a method of bulk import of contacts.
+ * @method string getTotalContactsCount(array $params) The method returns the contacts database size by the user login.
+ * @method string getContactCount(array $params) Get contact count in list.
+ * @method string createEmailMessage(array $params) It is a method to create an email without sending it.
+ * @method string createSmsMessage(array $params) It is a method to create SMS messages without sending them.
+ * @method string createCampaign(array $params) This method is used to schedule or immediately start sending email
  * or SMS messages.
- * @method getActualMessageVersion(array $params) The method returns the id of the relevant version of
+ * @method string getActualMessageVersion(array $params) The method returns the id of the relevant version of
  * the specified letter.
- * @method checkSms(array $params) It returns a string — the SMS sending status.
- * @method sendTestEmail(array $params) It is a method to send a test email message.
- * @method checkEmail(array $params) The method allows you to check the delivery status of emails sent
+ * @method string checkSms(array $params) It returns a string — the SMS sending status.
+ * @method string sendTestEmail(array $params) It is a method to send a test email message.
+ * @method string checkEmail(array $params) The method allows you to check the delivery status of emails sent
  * using the sendEmail method.
- * @method updateOptInEmail(array $params) Each campaign list has the attached text of the invitation
+ * @method string updateOptInEmail(array $params) Each campaign list has the attached text of the invitation
  * to subscribe and confirm the email that is sent to the contact to confirm the campaign. The text of the letter
  * can be changed using the updateOptInEmail method.
- * @method getWebVersion(array $params) It is a method to get the link to the web version of the letter.
- * @method deleteMessage(array $params) It is a method to delete a message.
- * @method createEmailTemplate(array $params) It is a method to create an email template for a mass campaign.
- * @method updateEmailTemplate(array $params) It is a method to edit email templates for a mass campaign.
- * @method deleteTemplate(array $params) It is a method to delete a template.
- * @method getTemplate(array $params) The method returns information about the specified template.
- * @method getTemplates(array $params = []) This method is used to get the list of templates created
+ * @method string getWebVersion(array $params) It is a method to get the link to the web version of the letter.
+ * @method string deleteMessage(array $params) It is a method to delete a message.
+ * @method string createEmailTemplate(array $params) It is a method to create an email template for a mass campaign.
+ * @method string updateEmailTemplate(array $params) It is a method to edit email templates for a mass campaign.
+ * @method string deleteTemplate(array $params) It is a method to delete a template.
+ * @method string getTemplate(array $params) The method returns information about the specified template.
+ * @method string getTemplates(array $params = []) This method is used to get the list of templates created
  * both through the UniSender personal account and through the API.
- * @method listTemplates(array $params = []) This method is used to get the list of templates created both
+ * @method string listTemplates(array $params = []) This method is used to get the list of templates created both
  * through the UniSender personal account and through the API.
- * @method getCampaignCommonStats(array $params) The method returns statistics similar to «Campaigns».
- * @method getVisitedLinks(array $params) Get a report on the links visited by users in the specified email campaign.
- * @method getCampaigns(array $params = array()) It is a method to get the list of all available campaigns.
- * @method getCampaignStatus(array $params) Find out the status of the campaign created using the createCampaign method.
- * @method getMessages(array $params = []) This method is used to get the list of letters created both
+ * @method string getCampaignCommonStats(array $params) The method returns statistics similar to «Campaigns».
+ * @method string getVisitedLinks(array $params) Get a report on the links visited by users in the specified email campaign.
+ * @method string getCampaigns(array $params = array()) It is a method to get the list of all available campaigns.
+ * @method string getCampaignStatus(array $params) Find out the status of the campaign created using the createCampaign method.
+ * @method string getMessages(array $params = []) This method is used to get the list of letters created both
  * through the UniSender personal account and through the API.
- * @method getMessage(array $params) It is a method to get information about SMS or email message.
- * @method listMessages(array $params) This method is used to get the list of messages created both through
+ * @method string getMessage(array $params) It is a method to get information about SMS or email message.
+ * @method string listMessages(array $params) This method is used to get the list of messages created both through
  * the UniSender personal account and through the API. The method works like getMessages, the difference of
  * listMessages is that the letter body and attachments are not returned, while the user login is returned. To get the
  * body and attachments, use the getMessage method.
- * @method getFields() It is a method to get the list of user fields.
- * @method createField(array $params) It is a method to create a new user field, the value of which can be set for
+ * @method string getFields() It is a method to get the list of user fields.
+ * @method string createField(array $params) It is a method to create a new user field, the value of which can be set for
  * each recipient, and then it can be substituted in the letter.
- * @method updateField(array $params) It is a method to change user field parameters.
- * @method deleteField(array $params) It is a method to delete a user field.
- * @method getTags() It is a method to get list of all tags.
- * @method deleteTag(array $params) It is a method to delete a user tag.
- * @method isContactInLists(array $params) Checks whether contact is in list.
- * @method getContactFieldValues(array $params) Get addinitioan fields values for a contact.
+ * @method string updateField(array $params) It is a method to change user field parameters.
+ * @method string deleteField(array $params) It is a method to delete a user field.
+ * @method string getTags() It is a method to get list of all tags.
+ * @method string deleteTag(array $params) It is a method to delete a user tag.
+ * @method string isContactInLists(array $params) Checks whether contact is in list.
+ * @method string getContactFieldValues(array $params) Get addinitioan fields values for a contact.
  */
 class UnisenderApi
 {
